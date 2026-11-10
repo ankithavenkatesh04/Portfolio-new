@@ -1,0 +1,269 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Sans", sans-serif;
+}
+
+/* ================= PAGE ================= */
+body {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.contact-header {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  z-index: 10;
+}
+
+/* Reuse outline button style */
+.btn-outline {
+  padding: 14px 32px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #f4c84a;
+  color: #000;
+}
+
+/* ================= WRAPPER ================= */
+.contact-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+/* ================= CONTAINER ================= */
+.contact-container {
+  width: 100%;
+  max-width: 920px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+}
+
+/* ================= INTRO ================= */
+.contact-intro h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.contact-intro p {
+  font-size: 17px;
+  line-height: 1.7;
+  opacity: 0.85;
+  max-width: 380px;
+}
+
+/* ================= FORM ================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ================= FIELD ================= */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+/* ================= INPUTS ================= */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form select option {
+  background: #000;
+  color: #fff;
+}
+
+/* ================= FOCUS ================= */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #f4c84a;
+}
+
+/* ================= BUTTON ================= */
+.btn-submit {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #f4c84a;
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-intro h1 {
+    font-size: 34px;
+  }
+}
+
+/* ================= SELECT ARROW POSITION ================= */
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 40px; /* moves arrow slightly left */
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* =====================================================================
+   RESPONSIVE ADDITIONS (tablet / mobile only; desktop is unchanged)
+   ===================================================================== */
+
+/* Tablet and below: make room so the absolute "Back to Home" button
+   never overlaps the heading, and keep content inside the screen */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .contact-header {
+    right: 24px;
+  }
+
+  .contact-wrapper {
+    align-items: flex-start;
+    padding: 110px 24px 64px;
+  }
+
+  .contact-intro p {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .contact-header {
+    top: 20px;
+    right: 16px;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .contact-wrapper {
+    padding: 90px 16px 48px;
+  }
+
+  .contact-container {
+    gap: 36px;
+  }
+
+  .contact-intro h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .contact-intro p {
+    font-size: 16px;
+  }
+
+  .contact-form {
+    gap: 18px;
+  }
+
+  /* 16px prevents iOS from auto-zooming into fields on focus */
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 16px;
+    padding: 13px 14px;
+    width: 100%;
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .contact-intro h1 {
+    font-size: 25px;
+  }
+}
+
+/* =====================================================================
+   TOUCH FEEDBACK
+   Phones have no real "hover", so mirror the hover style on :active
+   (the moment a button is pressed). Desktop hover is unchanged.
+   ===================================================================== */
+.btn-outline:active,
+.btn-submit:active {
+  background: #f4c84a;
+  color: #000;
+}
+
+@media (hover: none) {
+  .btn-outline,
+  .btn-submit {
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease, color 0.1s ease;
+  }
+}

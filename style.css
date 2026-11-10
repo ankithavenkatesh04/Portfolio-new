@@ -1,0 +1,857 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sofia Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  padding: 32px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* NAME SIZE INCREASE */
+.brand span {
+  font-size: 1.45rem;   /* increased size */
+  font-weight: 600;
+}
+
+/* BUTTON */
+.outline-btn {
+  background: transparent;
+  color: #fff;
+  border: 1.4px solid #fff;
+  padding: 14px 34px;        /* bigger button */
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 12px;      /* rounded rectangle */
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.outline-btn:hover {
+  background-color: #F6DD3A;
+  color: #000;
+  border-color: #F6DD3A;
+}
+
+.center-btn {
+  margin-top: 40px;         /* more breathing space */
+}
+
+/* HERO CONTENT */
+.hero-content {
+  flex: 1;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;         /* reduced line-height */
+  font-weight: 600;
+  margin-top: 108px;         /* pushes heading downward */
+}
+
+.hero-subtitle {
+  margin-top: 24px;
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+/* "Let's Talk" wrapper (was an inline style; same values on desktop) */
+.hero-cta {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* ========== WORK PREVIEW ========== */
+.work-preview {
+  padding: 15px 30px;
+  overflow: hidden;      
+  margin-top: -70px;     
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* ensures equal space between rows */
+}
+
+.work-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap;     
+  flex-shrink: 0;
+}
+
+/* Images */
+.work-row img {
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #111;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Optional hover zoom */
+.work-row img:hover {
+  transform: scale(1.05);
+}
+
+.work-preview {
+  overflow: hidden;
+}
+
+.work-row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  will-change: transform;
+}
+
+/* Animations */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.work-row.left .work-track {
+  animation: marquee-left 40s linear infinite;
+}
+
+.work-row.right .work-track {
+  animation: marquee-right 40s linear infinite;
+}
+
+
+/* SERVICES */
+.services {
+  padding: 40px 50px;  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;           
+}
+
+.service-card {
+  background: #1a1a1a;
+  padding: 4px;                /* reduced padding */
+  border-radius: 12px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* vertically centers content */
+  align-items: center;
+  aspect-ratio: 1 / 0.9;       /* slightly shorter card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* SERVICE ICON */
+.service-card .service-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 20px;         /* more space before heading */
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Optional subtle hover polish */
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Heading */
+.service-card h3 {
+  margin-bottom: 12px;
+  font-size: 26px;      
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Paragraph */
+.service-card p {
+  font-size: 17px;              /* slightly smaller text */
+  line-height: 1.55;
+  opacity: 0.9;
+  color: #ddd;
+  text-align: center;
+  max-width: 220px;             /* tighter text width */
+}
+
+
+
+
+/* ========== MY WORK SECTION ========== */
+.my-work {
+  padding: 80px 80px;
+  background: #fff;
+  color: #000;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.section-divider {
+  max-width: 80%;
+  margin: 0 auto 60px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+
+/* PROJECT ITEM */
+.work-item {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.work-image img {
+  width: 100%;
+  max-width: 500px;     
+  height: 300px;         
+  border-radius: 8px;     
+  object-fit: cover;       /* fills the frame neatly */
+  object-position: center; /* centers the image for natural cropping */
+}
+
+
+
+/* CONTENT */
+.work-content h3 {
+  font-size: 32px;          /* increased headline size */
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.work-content p {
+  font-size: 16px;          /* increased paragraph size */
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* VISIT LINK */
+.visit-link {
+  display: inline-block;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.visit-link:hover {
+  color: #007BFF;           /* blue on hover */
+  text-decoration: underline;
+  transform: scale(1.05);   /* subtle pop effect */
+}
+
+/* TECH TAGS */
+.tech-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tech-tags span {
+  padding: 10px 18px;        
+  border: 1px solid #d3d3d3; 
+  border-radius: 6px;       /* reduced for rectangular look */
+  font-size: 14px;           
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(128,128,128,0.3); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-tags span:hover {
+  transform: translateY(-2px);  
+  box-shadow: 2px 4px 8px rgba(128,128,128,0.4); 
+}
+
+
+
+
+/* ========== TESTIMONIALS ========== */
+.testimonials {
+  padding: 80px;
+  background: #000;
+  color: #fff;
+}
+
+.section-title.dark {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* Card style — compact & clean */
+.testimonial-card {
+  background: #1f1f1f;
+  padding: 24px 26px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Testimonial text */
+.testimonial-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* User section */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-user img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-user h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.testimonial-user span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ========== ABOUT DESIGNER ========== */
+.about-designer {
+  padding: 100px 20px;
+  background: #000;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start; /* aligns image and text at the top */
+  justify-content: center;
+  gap: 100px; /* increases space between image and text */
+  flex-wrap: wrap; /* keeps it responsive */
+}
+
+
+.about-image {
+  margin-left: 70px; /* moves the whole image a bit more to the right */
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-top: -35px; /* keeps image slightly up */
+  object-fit: cover;
+  background: #f4c84a;
+}
+
+.about-text {
+  max-width: 700px;
+  margin-left: 40px; /* moves the text a bit to the left */
+}
+
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+
+.about-buttons {
+  display: flex;
+  justify-content: flex-start; /* aligns buttons to left of text */
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.outline-btn {
+  padding: 12px 24px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.outline-btn:hover {
+  background: #f4c84a; /* yellow hover */
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* slightly smaller gap for neat spacing */
+  justify-content: flex-start; /* aligns with text */
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 24px;  /* small and neat */
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.85; /* slightly faded for subtle look */
+  transition: 0.3s;
+}
+
+.social-icons a img:hover {
+  opacity: 1;
+  transform: scale(1.2); /* subtle zoom on hover */
+}
+
+.testimonial-card {
+  position: relative;
+}
+
+.testimonial-link {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.testimonial-link:hover {
+  color: #fff; /* or your accent color */
+  text-decoration: underline;
+}
+
+
+/* =====================================================================
+   RESPONSIVE ADDITIONS
+   Everything below only applies on screens <= 1024px wide.
+   Desktop (>1024px) rendering is unchanged.
+   ===================================================================== */
+
+/* ---------- Laptop-small / Tablet landscape ---------- */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 28px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    margin-top: 80px;
+  }
+
+  .services {
+    padding: 40px 32px;
+  }
+
+  .my-work {
+    padding: 64px 40px;
+  }
+
+  .testimonials {
+    padding: 64px 40px;
+  }
+
+  /* About: stack image above text instead of relying on wrap + offsets */
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-image {
+    margin-left: 0;
+  }
+
+  .about-image img {
+    margin-top: 0;
+  }
+
+  .about-text {
+    margin-left: 0;
+    max-width: 700px;
+    width: 100%;
+  }
+}
+
+/* ---------- Tablet portrait ---------- */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+    margin-top: 64px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  /* Services: keep 3 across but let cards size to their content */
+  .services {
+    padding: 32px 24px;
+    gap: 14px;
+  }
+
+  .service-card {
+    aspect-ratio: auto;
+    padding: 24px 14px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* My Work: stack image above text */
+  .work-item {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 56px;
+  }
+
+  .work-image img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 3;
+  }
+
+  .work-content h3 {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+
+  .section-title.dark {
+    margin-bottom: 36px;
+  }
+
+  .section-divider {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  /* Testimonials: single column */
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-designer {
+    padding: 72px 24px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .hero {
+    padding: 20px 20px;
+  }
+
+  /* Brand and button wrap onto two lines only if they cannot fit */
+  .navbar {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand span {
+    font-size: 1.05rem;
+  }
+
+  .navbar .outline-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  /* Center heading, subtitle and button as one block, both ways */
+  .hero-content {
+    width: 100%;
+    margin: 0;
+    padding: 24px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-top: 16px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-cta {
+    margin-top: 28px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-content .outline-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    text-align: center;
+  }
+
+  /* Marquee strip: smaller thumbnails, same animation */
+  .work-preview {
+    padding: 15px 0;
+    margin-top: -30px;
+    gap: 14px;
+  }
+
+  .work-track {
+    gap: 14px;
+  }
+
+  .work-row img {
+    width: 220px;
+    height: 138px;
+  }
+
+  /* Services: one card per row */
+  .services {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 28px 20px;
+  }
+
+  .service-card p {
+    font-size: 16px;
+    max-width: 340px;
+  }
+
+  /* My Work */
+  .my-work {
+    padding: 48px 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .work-item {
+    margin-bottom: 48px;
+  }
+
+  .work-content h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .work-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .tech-tags {
+    gap: 10px;
+  }
+
+  .tech-tags span {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* Testimonials: leave room at the bottom for the "Know More" link */
+  .testimonials {
+    padding: 48px 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px 20px 52px;
+  }
+
+  .testimonial-user {
+    min-width: 0;
+  }
+
+  /* About */
+  .about-designer {
+    padding: 56px 20px;
+  }
+
+  .about-content {
+    gap: 28px;
+  }
+
+  .about-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .about-buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .about-buttons .outline-btn {
+    flex: 1 1 140px;
+    text-align: center;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 380px) {
+  .hero-content h1 {
+    font-size: 25px;
+  }
+
+  .brand span {
+    font-size: 1rem;
+  }
+
+  .work-row img {
+    width: 190px;
+    height: 120px;
+  }
+}
+
+/* =====================================================================
+   TOUCH FEEDBACK
+   Phones have no real "hover", and a tap navigates away almost
+   instantly, so the :hover colour is never seen. :active fires the
+   moment the button is pressed, so we mirror the hover style on it.
+   Desktop hover behaviour is unchanged.
+   ===================================================================== */
+.outline-btn:active {
+  background: #f4c84a;
+  color: #000;
+  border-color: #F6DD3A;
+}
+
+@media (hover: none) {
+  .outline-btn {
+    -webkit-tap-highlight-color: transparent;
+    /* quicker fade so the colour appears right as the button is pressed */
+    transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+  }
+}

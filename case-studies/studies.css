@@ -1,0 +1,482 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Sans", sans-serif;
+}
+
+/* ================= PAGE LOCK ================= */
+body {
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.cs-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: #000;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ================= BRAND ================= */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ================= HEADER ================= */
+.contact-header {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  z-index: 10;
+}
+
+/* Reuse outline button style */
+.btn-outline {
+  padding: 14px 32px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #f4c84a;
+  color: #000;
+}
+
+
+/* ================= LAYOUT ================= */
+.cs-wrapper {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+/* ================= SIDEBAR ================= */
+.cs-sidebar {
+  width: 260px;
+  padding: 64px 32px;
+  background: #000;
+  border-right: 1px solid #222;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin-bottom: 24px;
+}
+
+.cs-sidebar ul {
+  list-style: none;
+}
+
+.cs-sidebar a {
+  display: block;
+  margin-bottom: 14px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 15.5px;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+}
+
+.cs-sidebar a:hover,
+.cs-sidebar a.active {
+  color: #fff;
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background: #333;
+  margin: 28px 0;
+}
+
+/* ================= CONTENT ================= */
+.cs-content {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* ================= CASE STUDIES ================= */
+.case-study.dark {
+  background: #000;
+  color: #fff;
+}
+
+.case-study.light {
+  background: #fff;
+  color: #000;
+}
+
+/* ================= SECTIONS ================= */
+.cs-section {
+  padding: 72px 96px;
+  border-bottom: 1px solid rgba(255,255,255,0.06); /* ✨ phase separation */
+}
+
+.case-study.light .cs-section {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.case-label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.cs-section small {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.cs-section h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 14px 0;
+}
+
+.cs-section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 14px 0;
+}
+
+.cs-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.case-subtitle {
+  font-size: 17px;
+  opacity: 0.9;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* ================= TEXT ================= */
+.cs-section p {
+  max-width: 740px;
+  line-height: 1.75;
+  opacity: 0.92;
+  margin-top: 12px;
+}
+
+/* ================= LISTS (NEW) ================= */
+.cs-section ul {
+  margin-top: 16px;
+  padding-left: 20px;
+  max-width: 720px;
+}
+
+.cs-section li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ================= IMAGES ================= */
+.image-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.image-grid img {
+  width: 100%;
+  max-width: 320px;        /* 🔹 prevents giant images */
+  margin: 0 auto;          /* 🔹 centers images */
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+/* Light case polish */
+.case-study.light .image-grid img {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* ================= COMPARISON ================= */
+.comparison-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.comparison-grid ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
+  .cs-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cs-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #222;
+    padding: 24px 32px;
+  }
+
+  .cs-content {
+    overflow: visible;
+  }
+
+  .cs-section {
+    padding: 56px 28px;
+    /* keeps anchor targets from hiding under the sticky header */
+    scroll-margin-top: 80px;
+  }
+}
+
+/* ---------- Tablet portrait / large phones ---------- */
+@media (max-width: 768px) {
+  .cs-header {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  /* ---- Sidebar -> sticky "chip" navigation bar under the header ---- */
+  .cs-sidebar {
+    position: sticky;
+    top: 80px;
+    z-index: 90;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+  }
+
+  .sidebar-title {
+    display: none; /* the chips are self-explanatory; saves vertical space */
+  }
+
+  .cs-sidebar ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 2px 20px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    /* soft fade on the right edge hints that the bar scrolls */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+
+  .cs-sidebar ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cs-sidebar li {
+    flex-shrink: 0;
+  }
+
+  .cs-sidebar li a {
+    margin-bottom: 0;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 8px 14px;
+    border: 1px solid #333;
+    border-radius: 999px;
+    color: #bbb;
+  }
+
+  /* First chip of each case study = the case study's name, a bit brighter */
+  .cs-sidebar li:first-child a,
+  .cs-sidebar .divider + li a {
+    border-color: #777;
+    color: #fff;
+  }
+
+  .cs-sidebar li a:hover {
+    font-weight: 600;
+  }
+
+  /* Current section: accent-yellow chip (same yellow as the buttons) */
+  .cs-sidebar li a.active {
+    background: #f4c84a;
+    border-color: #f4c84a;
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* Slim divider between the two case studies */
+  .divider {
+    width: 1px;
+    height: 22px;
+    margin: 0 4px;
+    flex-shrink: 0;
+    background: #444;
+  }
+
+  .cs-section {
+    padding: 48px 20px;
+    /* header (80px) + chip bar (~58px) */
+    scroll-margin-top: 144px;
+  }
+
+  .cs-section h1 {
+    font-size: 30px;
+  }
+
+  .cs-section h2 {
+    font-size: 23px;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .cs-header {
+    height: 70px;
+    padding: 0 16px;
+  }
+
+  .brand {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand span {
+    font-size: 14px;
+  }
+
+  .btn-outline {
+    padding: 9px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cs-sidebar {
+    top: 70px; /* header is 70px on phones */
+  }
+
+  .cs-sidebar ul {
+    padding: 2px 16px;
+  }
+
+  .cs-section {
+    padding: 40px 16px;
+    scroll-margin-top: 134px; /* header (70px) + chip bar */
+  }
+
+  .cs-section h1 {
+    font-size: 26px;
+  }
+
+  .cs-section h2 {
+    font-size: 21px;
+  }
+
+  .case-subtitle {
+    font-size: 16px;
+  }
+
+  .cs-section p,
+  .cs-section li {
+    font-size: 15px;
+  }
+
+  .image-grid {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 360px) {
+  .brand span {
+    font-size: 13px;
+  }
+
+  .btn-outline {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+}
+
+/* =====================================================================
+   TOUCH FEEDBACK
+   Phones have no real "hover", and a tap navigates away almost
+   instantly, so the :hover colour is never seen. :active fires the
+   moment the button is pressed, so we mirror the hover style on it.
+   Desktop hover behaviour is unchanged.
+   ===================================================================== */
+.btn-outline:active {
+  background: #f4c84a;
+  color: #000;
+}
+
+@media (hover: none) {
+  .btn-outline {
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease, color 0.1s ease;
+  }
+}
